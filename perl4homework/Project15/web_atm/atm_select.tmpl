@@ -1,0 +1,22 @@
+<HTML>
+  <HEAD>
+    <TITLE>First Bank of O'Reilly</TITLE>
+  </HEAD>
+  <BODY>
+     <CENTER><img src="atm_machine_admin_credit_debit_accounts.jpg" alt="ATM Machine Login" ></CENTER>
+    
+    <BR>
+    <H3>Please select an account that you want to modify and click the 'submit' button:</H3>    
+    <FORM ACTION="atm_choose.cgi" METHOD="POST">
+      Account number:
+      <SELECT NAME="account_number">
+        <TMPL_LOOP NAME="account_loop">
+        <OPTION VALUE="<TMPL_VAR NAME=account_number>"><TMPL_VAR NAME="account_number">
+        </TMPL_LOOP>
+      </SELECT> <BR/>
+      <INPUT TYPE="SUBMIT">
+    </FORM>
+  </BODY>
+</HTML>
+
+ 

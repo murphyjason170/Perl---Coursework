@@ -1,0 +1,37 @@
+<HTML>
+  <HEAD>
+    <TITLE>First Bank of O'Reilly</TITLE>
+  </HEAD>
+  <BODY>
+    <CENTER><img src="atm_machine_main_transfer.jpg" alt="Transfer Results" ></CENTER>
+
+    <BR></BR>
+    <BR></BR>
+   <H3>Transfer Successful!</H3><BR>
+
+   <H3>Source Account:</H3>
+   <TABLE BORDER="1">
+    <TR><TD>Account number</TD><TD><TMPL_VAR NAME="account_number_source"></TD></TR>
+    <TR><TD>Owner(s)</TD><TD><TMPL_VAR NAME="owners_source"></TD></TR>
+    <TR><color="red"><TD>Balance</TD><TD><TMPL_VAR NAME="Balance_source"></color></TD></TR>
+   </TABLE>
+   <TABLE BORDER="1">
+   </TABLE>
+
+	<BR>
+
+   <H3>Destination Account:</H3>
+   <TABLE BORDER="1">
+    <TR><TD>Account number</TD><TD><TMPL_VAR NAME="account_number_destination"></TD></TR>
+    <TR><TD>Owner(s)</TD><TD><TMPL_VAR NAME="owners_destination"></TD></TR>
+    <TR><TD><color="green">Balance</TD><TD><TMPL_VAR NAME="Balance_destination"></color></TD></TR>
+   </TABLE>
+   <TABLE BORDER="1">
+   </TABLE>
+
+    <CENTER><P><TR><TD><a href="atm_login_confirmation.cgi">Home</a></TD></TR></P></CENTER>
+
+
+
+  </BODY>
+</HTML>

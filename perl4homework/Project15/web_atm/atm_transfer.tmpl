@@ -1,0 +1,50 @@
+<HTML>
+  <HEAD>
+    <TITLE>First Bank of O'Reilly - Transfer</TITLE>
+  </HEAD>
+  <BODY>    
+    <CENTER><img src="atm_machine_main_transfer.jpg" alt="ATM Machine Transfer" ></CENTER>
+    <FORM ACTION="atm_transfer_results.cgi" METHOD="POST">
+      
+      <BR>
+      <BR>
+      
+      <TABLE>
+      <TR>
+        <TD>
+        Account number Source:
+        </TD>
+        <TD>
+      <SELECT NAME="account_number_source">
+        <TMPL_LOOP NAME="account_loop_source">
+        <OPTION VALUE="<TMPL_VAR NAME=account_number_source>"><TMPL_VAR NAME="account_number_source">
+        </TMPL_LOOP>
+      </SELECT> 
+       </TD>
+      </TR>
+
+      <TR>
+      <TD>      
+      Account number Destination:
+      </TD>
+      <TD>
+      <SELECT NAME="account_number_destination">
+        <TMPL_LOOP NAME="account_loop_destination">
+        <OPTION VALUE="<TMPL_VAR NAME=account_number_destination>"><TMPL_VAR NAME="account_number_destination">
+        </TMPL_LOOP>
+      </SELECT>
+      </TD>
+      </TR>
+
+     <TR><TD>Amount:</TD><TD> <INPUT NAME="amount" TYPE="text"></TD></TR><BR>
+     
+      <TR><TD><CENTER><INPUT TYPE="SUBMIT"></CENTER></TD></TR>
+    </TABLE>
+
+    </FORM>
+    
+    <CENTER><P><TR><TD><a href="atm_login_confirmation.cgi">Home</a></TD></TR></P></CENTER>
+
+    
+  </BODY>
+</HTML>

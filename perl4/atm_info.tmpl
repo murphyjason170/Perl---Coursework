@@ -1,0 +1,8 @@
+Account number: <TMPL_VAR NAME="account_number">
+Owners: <TMPL_IF NAME="owner_loop">
+  <TMPL_LOOP NAME="owner_loop"><TMPL_VAR NAME="owner"><TMPL_UNLESS NAME="last">, </TMPL_UNLESS></TMPL_LOOP> (Joint Account)
+<TMPL_ELSE>
+  <TMPL_VAR NAME="single_owner">
+</TMPL_IF>
+Balance: $<TMPL_VAR NAME="balance">
+ 

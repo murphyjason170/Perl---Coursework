@@ -1,0 +1,50 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $order_allow_deny = 0;
+my $order_deny_allow = 0;
+my $first_line_matched_on_directive = 0;
+
+while (<>){
+
+	# This is the logic to assess the first line of the file
+	if ( $. == 1 && $_ =~ /order allow,deny/ )
+	{
+		print "allow/deny has been matched: on line $. \n";
+		$order_allow_deny = 1;
+		$first_line_matched_on_directive++;
+ 			
+	}
+	elsif ( $. == 1 && $_ =~ /order deny,allow/ ) 
+	{
+		print "deny/allow has been matched: on line $. \n";
+		$order_deny_allow = 1;		# Turn on the deny,allow directive
+		$first_line_matched_on_directive++;
+ 	}
+	elsif ( $first_line_matched_on_directive == 0) 
+	{
+		die "This is an invalid order directive and this program will terminate.\n";
+ 	}
+ 
+ 
+ 	# Second line logic to parse for another order directive
+	if ( $. == 2 && $_ =~ /order allow,deny/ )
+	{
+		print "allow/deny has been matched: on line $. \n";
+		warn "This is the second line that has a directive. The second order directive will be the directive moving forward\n";
+		$order_allow_deny = 1;			# Turn on the allow,deny directive
+		$order_deny_allow = 0;			# Turn off the deny,allow directive
+ 			
+	}
+	elsif ( $. == 2 && $_ =~ /order deny,allow/ ) 
+	{
+		print "deny/allow has been matched: on line $. \n";
+		warn "This is the second line that has a directive. The second order directive will be the directive moving forward\n";
+		$order_deny_allow = 1;		# Turn on the deny,allow directive
+		$order_allow_deny = 0;		# Turn off the allow,deny directive
+ 	}
+ 	
+ 
+ 		
+}

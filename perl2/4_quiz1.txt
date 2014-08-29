@@ -1,0 +1,5 @@
+/usr/local/bin 
+N/A="Not Applicable"! 
+(/usr|/opt)(?:/local)?/[bes] 
+[=/*]{3,5}
+

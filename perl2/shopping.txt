@@ -1,0 +1,8 @@
+1	surfboard
+2	chairs
+3	bars of wax
+4	bottles of sunlotion
+5	joints
+6	bottles of lemonade
+
+
